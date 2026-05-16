@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Battle</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/battle.css">
+    <link rel="stylesheet" href="css/ui.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link rel="stylesheet" href="css/cinematic.css">
+    <link rel="stylesheet" href="css/endscreen.css">
+    <link rel="stylesheet" href="css/sparkles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="game-frame">
+        <!-- GAME SCREEN -->
+        <div id="game" class="screen">
+
+            <!-- TOP (ENEMY = HER HEART) -->
+            <div class="top-area">
+                <div class="enemy-box">
+                    <div class="name">AMY 🐼</div>
+                    <div class="hp-bar">
+                        <div id="enemyHp" class="hp-fill"></div>
+                    </div>
+                    <div id="enemyHpText">100 / 100</div>
+                </div>
+            </div>
+
+            <!-- SPRITES AREA -->
+            <div class="battle-area">
+
+                <!-- ENEMY (HER) -->
+                <div class="enemy-sprite">
+                    <img src="assets/her.png" alt="her">
+
+                    <div class="sparkles">
+                        <span>✨</span>
+                        <span>⭐</span>
+                        <span>✨</span>
+                        <span>💫</span>
+                        <span>✨</span>
+                    </div>
+                </div>
+
+                <!-- PLAYER (YOU) -->
+                <div class="player-sprite">
+                    <img src="assets/me.png" alt="me">
+                </div>
+
+            </div>
+
+            <!-- DIALOGUE BOX -->
+            <div class="dialogue-box">
+                <p id="dialogue">A wild emotional battle begins...</p>
+
+                <button id="nextBtn" class="next-btn hidden" onclick="nextTurn()">
+                    Next ▶
+                </button>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="action-box">
+
+                <div class="question" id="question"></div>
+
+                <div id="answers" class="action-grid"></div>
+
+            </div>
+
+        </div>
+
+        <div id="endScreen" class="end-screen hidden">
+
+            <div class="end-card">
+
+                <h1>💖 Battle Complete 💖</h1>
+
+                <p id="finalText">Her heart has been evaluated...</p>
+
+                <h2>💌 Love Ball Used...</h2>
+
+                <h1>Will you be my girlfriend? 💕</h1>
+
+                <div class="end-buttons">
+                    <button>YES 💖</button>
+                    <button>YES 😳</button>
+                    <button>YES 💕</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="cinematic" class="cinematic hidden">
+
+        <div class="cinematic-text" id="cinText">...</div>
+
+        <div class="cinematic-ball">
+            <img src="assets/loveball.png" alt="ball">
+        </div>
+
+        <div class="cinematic-flash"></div>
+
+    </div>
+
+    <script src="scripts/state.js"></script>
+    <script src="scripts/data.js"></script>
+
+    <script src="scripts/helpers.js"></script>
+
+    <script src="scripts/battlesystem.js"></script>
+    <script src="scripts/answersystem.js"></script>
+
+    <script src="scripts/cinematicend.js"></script>
+    <script src="scripts/finalscreen.js"></script>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+.shiny {
+    position: relative;
+}
+
+/* glow */
+.shiny img {
+    filter:
+        drop-shadow(0 0 6px #ffb6ff) drop-shadow(0 0 12px #ffd6ff) drop-shadow(0 0 18px #ffffff);
+
+    animation: glowPulse 2s infinite ease-in-out;
+}
+
+/* container */
+.sparkles {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 180px;
+    height: 180px;
+    pointer-events: none;
+}
+
+/* particles */
+.sparkles span {
+    position: absolute;
+    font-size: 14px;
+    opacity: 0;
+    animation: sparkleFloat 2.5s infinite ease-in-out;
+}
+
+/* positions */
+.sparkles span:nth-child(1) {
+    top: 100px;
+    left: 90px;
+}
+
+.sparkles span:nth-child(2) {
+    top: 40px;
+    right: 10px;
+}
+
+.sparkles span:nth-child(3) {
+    bottom: 20px;
+    left: 60px;
+}
+
+.sparkles span:nth-child(4) {
+    bottom: 40px;
+    right: 0px;
+}
+
+.sparkles span:nth-child(5) {
+    top: 60px;
+    left: 70px;
+}
+
+@keyframes sparkleFloat {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2) translateY(-10px);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5) translateY(-20px);
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

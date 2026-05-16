@@ -1,0 +1,93 @@
+.top-area {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.enemy-box {
+    text-align: right;
+}
+
+.name {
+    font-weight: bold;
+}
+
+/* HP BAR */
+.hp-bar {
+    width: 200px;
+    height: 12px;
+    background: #ddd;
+    border: 2px solid #000;
+}
+
+.hp-fill {
+    width: 100%;
+    height: 100%;
+    background: hotpink;
+    transition: 0.4s;
+}
+
+/* BATTLE AREA */
+.battle-area {
+    position: relative;
+    flex: 1;
+}
+
+/* ENEMY */
+.enemy-sprite {
+    position: absolute;
+    top: -30px;
+    right: 15px;
+    width: 200px;
+    height: 200px;
+}
+
+.enemy-sprite img {
+    width: 100%;
+    image-rendering: pixelated;
+    animation: floatEnemy 2.5s ease-in-out infinite;
+}
+
+/* PLAYER */
+.player-sprite {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+}
+
+.player-sprite img {
+    width: 100%;
+    image-rendering: pixelated;
+    animation: floatPlayer 2.5s ease-in-out infinite;
+}
+
+/* idle animations */
+@keyframes floatEnemy {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatPlayer {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

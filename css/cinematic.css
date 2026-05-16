@@ -1,0 +1,72 @@
+.cinematic {
+    position: fixed;
+    inset: 0;
+    background: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    z-index: 9999;
+}
+
+.cinematic-text {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* BALL */
+.cinematic-ball img {
+    width: 300px;
+    height: 200px;
+    animation: ballShake 3s infinite;
+}
+
+/* FLASH + SHAKE */
+.active-flash {
+    background: white !important;
+}
+
+.active-shake {
+    animation: cinematicShake 0.2s;
+}
+
+/* animations */
+@keyframes ballShake {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes cinematicShake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-6px, 4px);
+    }
+
+    50% {
+        transform: translate(6px, -4px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
