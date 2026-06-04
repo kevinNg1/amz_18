@@ -1,7 +1,6 @@
-function updateHP() {
-    hp = Math.max(0, Math.min(100, hp));
-    hpBar.style.width = hp + "%";
-    hpText.innerText = hp + " / 100";
+function updateBondUI() {
+    bondBar.style.width = bond + "%";
+    bondText.innerText = bond + " / 100";
 }
 
 function setDialogue(text) {
@@ -13,11 +12,6 @@ function setDialogue(text) {
 function flashScreen() {
     document.body.classList.add("flash");
     setTimeout(() => document.body.classList.remove("flash"), 200);
-}
-
-function shakeEnemy() {
-    enemyImg.classList.add("hit");
-    setTimeout(() => enemyImg.classList.remove("hit"), 300);
 }
 
 function typeText(text, speed = 25) {

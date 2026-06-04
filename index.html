@@ -17,36 +17,54 @@
 
 <body>
 
+    <div id="splashScreen" class="splash-screen screen-fade active">
+        <div class="splash-card">
+
+            <img src="assets/loveball.png" alt="Love Ball" class="splash-ball">
+
+            <h1>Love Battle</h1>
+
+            <p>
+                A special challenge awaits...
+            </p>
+
+            <button onclick="startGame()">
+                Start
+            </button>
+
+        </div>
+    </div>
+
     <div class="game-frame">
         <!-- GAME SCREEN -->
         <div id="game" class="screen">
 
             <!-- TOP (ENEMY = HER HEART) -->
             <div class="top-area">
-                <div class="enemy-box">
-                    <div class="name">AMY 🐼</div>
+                <div class="bond-box">
+                    <div class="name">Bond Level 💖</div>
+
                     <div class="hp-bar">
-                        <div id="enemyHp" class="hp-fill"></div>
+                        <div id="bondBar" class="hp-fill"></div>
                     </div>
-                    <div id="enemyHpText">100 / 100</div>
+
+                    <div id="bondText">50 / 100</div>
                 </div>
             </div>
 
             <!-- SPRITES AREA -->
             <div class="battle-area">
 
+                <div class="battle-bg">
+                    <img src="assets/pokeball.png" alt="bg pokeball">
+                </div>
+
                 <!-- ENEMY (HER) -->
                 <div class="enemy-sprite">
                     <img src="assets/her.png" alt="her">
-
-                    <div class="sparkles">
-                        <span>✨</span>
-                        <span>⭐</span>
-                        <span>✨</span>
-                        <span>💫</span>
-                        <span>✨</span>
-                    </div>
                 </div>
+
+                <div class="vs-badge">VS</div>
 
                 <!-- PLAYER (YOU) -->
                 <div class="player-sprite">
@@ -55,13 +73,13 @@
 
             </div>
 
+            <button id="nextBtn" class="next-btn" onclick="nextTurn()">
+                Next
+            </button>
+
             <!-- DIALOGUE BOX -->
             <div class="dialogue-box">
                 <p id="dialogue">A wild emotional battle begins...</p>
-
-                <button id="nextBtn" class="next-btn hidden" onclick="nextTurn()">
-                    Next ▶
-                </button>
             </div>
 
             <!-- ACTION BUTTONS -->
@@ -77,22 +95,48 @@
 
         <div id="endScreen" class="end-screen hidden">
 
-            <div class="end-card">
+            <!-- SUCCESS CARD -->
+            <div id="successCard" class="end-card">
 
-                <h1>💖 Battle Complete 💖</h1>
+                <h1 class="end-title">Battle Complete</h1>
 
-                <p id="finalText">Her heart has been evaluated...</p>
+                <p id="finalTextSuccess" class="end-text">
+                    Her heart has been evaluated...
+                </p>
 
-                <h2>💌 Love Ball Used...</h2>
-
-                <h1>Will you be my girlfriend? 💕</h1>
-
-                <div class="end-buttons">
-                    <button>YES 💖</button>
-                    <button>YES 😳</button>
-                    <button>YES 💕</button>
+                <div class="end-section">
+                    <h3 class="end-subtitle">Love Ball Used</h3>
                 </div>
 
+                <h2 class="end-question">Will you be my girlfriend?</h2>
+
+                <div class="end-divider"></div>
+
+                <div class="end-buttons row">
+                    <button onclick="acceptChoice()">YES</button>
+                    <button onclick="acceptChoice()">YES</button>
+                </div>
+
+                <div id="resultStamp" class="result-stamp hidden">
+                    CONFIRMED
+                </div>
+
+                <div id="anniversary" class="anniversary hidden">
+                    <div class="anniversary-label">Relationship Established</div>
+                    <div class="anniversary-date">06 / 06 / 2026</div>
+                </div>
+
+            </div>
+
+            <!-- FAIL CARD -->
+            <div id="failCard" class="end-card">
+                <h1>Capture Failed</h1>
+
+                <p id="finalTextFail">She broke free from the Love Ball...</p>
+
+                <button id="retryBtn" class="retry-btn" onclick="restartGame()">
+                    Try Again
+                </button>
             </div>
 
         </div>

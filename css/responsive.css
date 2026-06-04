@@ -7,30 +7,49 @@
         max-height: none;
         border-radius: 0;
         padding: 0;
-        white-space: pre-wrap;
+        white-space: normal;
     }
 
-    .enemy-sprite {
-        right: 20px;
-        width: 100px;
-    }
-
+    .enemy-sprite,
     .player-sprite {
-        left: 20px;
-        width: 90px;
+        width: 110px;
+        height: 110px;
     }
 
     .hp-bar {
-        width: 140px;
+        width: 80%;
+        max-width: 260px;
+        height: 14px;
     }
 
     .dialogue-box {
         font-size: 14px;
-        height: 90px;
+        min-height: 90px;
+        height: auto;
+    }
+
+    .battle-area {
+        padding: 0 20px;
+    }
+
+    .vs-badge {
+        font-size: 26px;
+    }
+
+    .name {
+        font-size: 16px;
     }
 
     button {
         font-size: 14px;
+        padding: 12px;
+    }
+
+    .action-grid {
+        gap: 8px;
+    }
+
+    .action-box {
         padding: 12px;
     }
 }

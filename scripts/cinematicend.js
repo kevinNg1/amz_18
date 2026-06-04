@@ -32,26 +32,48 @@ function endGame() {
 
     function resolveCapture() {
 
-        const success = hp >= 60;
+        const success = bond >= 50;
 
         const ball = document.querySelector(".cinematic-ball img");
         if (ball) ball.style.animation = "none";
 
         if (success) {
-            cinText.innerText = "💖 Capture successful...";
 
-            setTimeout(() => {
-                cinematic.classList.add("open");
-                showFinalScreen(true);
-            }, 1200);
+            handleSuccess();
 
         } else {
-            cinText.innerText = "💔 Oh no... she broke free!";
+
+            handleFail();
+        }
+    }
+
+    function handleSuccess() {
+
+        cinText.innerText = "Capture successful...";
+
+        setTimeout(() => {
+
+            cinematic.classList.add("open");
 
             setTimeout(() => {
-                cinematic.classList.add("fail");
-                showFinalScreen(false);
-            }, 1200);
-        }
+                closeCinematicAndShow(true);
+            }, 800);
+
+        }, 1200);
+    }
+
+    function handleFail() {
+
+        cinText.innerText = "Oh no... she broke free!";
+
+        setTimeout(() => {
+
+            cinematic.classList.add("fail");
+
+            setTimeout(() => {
+                closeCinematicAndShow(false);
+            }, 800);
+
+        }, 1200);
     }
 }
