@@ -56,7 +56,7 @@ function runLaunchSequence() {
 
     setTimeout(() => {
         status.innerText = "Checking DLC...";
-    }, 2000);
+    }, 3000);
 
     setTimeout(() => {
         status.innerText = "Loading relationship data...";
