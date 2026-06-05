@@ -30,12 +30,60 @@ function showFinalScreen(success) {
 function startGame() {
 
     const splash = document.getElementById("splashScreen");
+    const launch = document.getElementById("launchScreen");
+    const game = document.getElementById("game");
 
-    splash.classList.remove("active");
+    splash.classList.add("fade-out");
 
     setTimeout(() => {
-        splash.remove();
-    }, 400);
+
+        splash.classList.add("hidden");
+
+        launch.classList.remove("hidden");
+        launch.classList.add("active");
+
+        runLaunchSequence();
+
+    }, 600);
+}
+
+function runLaunchSequence() {
+
+    const status = document.getElementById("launchStatus");
+    const launch = document.getElementById("launchScreen");
+    const game = document.getElementById("game");
+    const flash = document.getElementById("screenFlash");
+
+    setTimeout(() => {
+        status.innerText = "Checking DLC...";
+    }, 2000);
+
+    setTimeout(() => {
+        status.innerText = "Loading relationship data...";
+    }, 2000);
+
+    setTimeout(() => {
+        status.innerText = "Preparing Love Battle...";
+    }, 2000);
+
+    setTimeout(() => {
+
+        // ⚡ TRIGGER FLASH HERE (THIS IS THE KEY MOMENT)
+        flash.classList.remove("active");
+        void flash.offsetWidth;
+        flash.classList.add("active");
+
+        setTimeout(() => {
+
+            // hide launch screen
+            launch.classList.add("hidden");
+
+            // show game
+            game.classList.add("active");
+
+        }, 350);
+
+    }, 3200);
 }
 
 function restartGame() {

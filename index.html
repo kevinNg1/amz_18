@@ -20,19 +20,56 @@
     <div id="splashScreen" class="splash-screen screen-fade active">
         <div class="splash-card">
 
-            <img src="assets/loveball.png" alt="Love Ball" class="splash-ball">
+            <div class="pickup-tag">
+                PRE-ORDER READY
+            </div>
 
             <h1>Love Battle</h1>
 
-            <p>
-                A special challenge awaits...
+            <p class="edition">
+                Collector's Edition
             </p>
 
+            <div class="order-details">
+                <div>Customer: <strong>Amy & Kevin</strong></div>
+                <div>Status: <strong>Ready for Pickup</strong></div>
+            </div>
+
+            <div class="bonus-list">
+                <div>✓ Love Ball</div>
+                <div>✓ Relationship DLC</div>
+                <div>✓ Anniversary Bonus Content</div>
+            </div>
+
             <button onclick="startGame()">
-                Start
+                Collect Order
             </button>
 
         </div>
+    </div>
+
+    <div id="launchScreen" class="launch-screen hidden">
+
+        <div class="launch-card">
+
+            <img src="assets/loveball.png" class="launch-cover" alt="Love Battle">
+
+            <h1>Love Battle</h1>
+
+            <p>Collector's Edition</p>
+
+            <div class="launch-items">
+                <div>✓ Love Ball DLC</div>
+                <div>✓ Anniversary Bonus Content</div>
+                <div>✓ Relationship Expansion Pass</div>
+            </div>
+
+            <div id="launchStatus">
+                Preparing game...
+            </div>
+
+        </div>
+
     </div>
 
     <div class="game-frame">
@@ -153,6 +190,9 @@
         <div class="cinematic-flash"></div>
 
     </div>
+
+    <!-- SCREEN FLASH -->
+    <div id="screenFlash"></div>
 
     <script src="scripts/state.js"></script>
     <script src="scripts/data.js"></script>
