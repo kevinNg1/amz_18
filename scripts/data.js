@@ -62,7 +62,7 @@ const questions = [
         a: [
             { text: "Pokémon 🃏", correct: true },
             { text: "Yu-Gi-Oh! 🧙", correct: false },
-            { text: "Gundam Cards 🤖", correct: false },
+            { text: "Gundam Cards 🤖", correct: true },
             { text: "We don’t play games 🎮", correct: false }
         ]
     },
